@@ -61,7 +61,7 @@ const MegaGame = () => {
     <>
     <div className="mega_game">
                 {megaBoard.map((_, index) => (
-                   <Game key={`${gameKey}-${index}`} turn={turn} setTurn={setTurn} game_num={index} megaBoard={megaBoard} setMegaBoard={setMegaBoard}/>
+                   <Game key={`${gameKey}-${index}`} turn={turn} setTurn={setTurn} game_num={index} megaBoard={megaBoard} setMegaBoard={setMegaBoard} activeGame={activeGame} setActiveGame={setActiveGame}/>
                 ))}
             </div>
     <button onClick={resetGame}>Reset Game</button>
