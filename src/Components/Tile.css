@@ -10,10 +10,11 @@
 }
 .x {background-color: lightcoral;}
 .o {background-color: rgb(45, 177, 177);}
-.empty {background-color: white;}
+.empty {background-color: rgb(69, 25, 190);}
 
 .megaTile {
   width: 300px;
   height: 300px;
+  margin: 2px;
  }
  

@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import './MegaGame.css'
+import ResetButton from './ResetButton'
 import Game from './Game'
 import Tile from './Tile'
+import Winner from './Winner'
 const MegaGame = () => {
 
 
@@ -16,6 +18,7 @@ const MegaGame = () => {
     setMegaBoard(Array(9).fill(null));
     setTurn('X');
     setWinner(null);
+    setActiveGame(null);
     setGameKey(prev => prev + 1);
   };
 
@@ -38,6 +41,7 @@ const MegaGame = () => {
       board[a] === board[c]
     ) {
       console.log(board[a]);
+      setWinner(board[a]);
         return board[a];
       
     }
@@ -59,12 +63,15 @@ const MegaGame = () => {
 
   return (
     <>
+    <h1>Mega Tic Tac Toe</h1>
     <div className="mega_game">
                 {megaBoard.map((_, index) => (
                    <Game key={`${gameKey}-${index}`} turn={turn} setTurn={setTurn} game_num={index} megaBoard={megaBoard} setMegaBoard={setMegaBoard} activeGame={activeGame} setActiveGame={setActiveGame}/>
                 ))}
             </div>
-    <button onClick={resetGame}>Reset Game</button>
+    <Winner winner={winner} />
+    <ResetButton resetGame={resetGame} />
+    
     </>
   )
 }
