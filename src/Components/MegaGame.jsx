@@ -42,6 +42,7 @@ const MegaGame = () => {
     ) {
       console.log(board[a]);
       setWinner(board[a]);
+      setActiveGame(10);
         return board[a];
       
     }
