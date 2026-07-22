@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Game.css'
 import Tile from './Tile'
-const Game = ({turn, setTurn, game_num, megaBoard, setMegaBoard, activeGame, setActiveGame}) => {
+const Game = ({turn, setTurn, game_num, megaBoard, setMegaBoard, activeGame, setActiveGame, className}) => {
 
   const[board, setBoard] = useState(Array(9).fill(null));
   const[winner, setWinner] = useState(null);
@@ -48,6 +48,7 @@ const Game = ({turn, setTurn, game_num, megaBoard, setMegaBoard, activeGame, set
       board[a] === board[b] &&
       board[a] === board[c]
     ) {
+      setActiveGame(null);
       return board[a];
     }
   }
@@ -60,7 +61,7 @@ const Game = ({turn, setTurn, game_num, megaBoard, setMegaBoard, activeGame, set
         {
             winner ? ( <Tile className="megaTile" value={winner} onClick={() => {}} /> 
         ):(
-            <div className="game">
+            <div className={`game ${className}`}>
                 {board.map((_, index) => (
                     <Tile key={index} value={board[index]} onClick={() => handleClick(index)}/>
                 ))}

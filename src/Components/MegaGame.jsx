@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import './MegaGame.css'
 import ResetButton from './ResetButton'
 import Game from './Game'
-import Tile from './Tile'
 import Winner from './Winner'
 const MegaGame = () => {
 
@@ -65,11 +64,21 @@ const MegaGame = () => {
   return (
     <>
     <h1>Mega Tic Tac Toe</h1>
-    <div className="mega_game">
-                {megaBoard.map((_, index) => (
-                   <Game key={`${gameKey}-${index}`} turn={turn} setTurn={setTurn} game_num={index} megaBoard={megaBoard} setMegaBoard={setMegaBoard} activeGame={activeGame} setActiveGame={setActiveGame}/>
-                ))}
-            </div>
+    <div className={`mega_game ${activeGame === null ? 'active-game' : ''}`}>
+      {megaBoard.map((_, index) => (
+        <Game
+          key={`${gameKey}-${index}`}
+          turn={turn}
+          setTurn={setTurn}
+          game_num={index}
+          megaBoard={megaBoard}
+          setMegaBoard={setMegaBoard}
+          activeGame={activeGame}
+          className={activeGame === index ? 'active-game' : ''}
+          setActiveGame={setActiveGame}
+        />
+      ))}
+    </div>
     <Winner winner={winner} />
     <ResetButton resetGame={resetGame} />
     
