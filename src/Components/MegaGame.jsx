@@ -37,9 +37,8 @@ const MegaGame = () => {
     if (
       board[a] &&
       board[a] === board[b] &&
-      board[a] === board[c]
+      board[a] === board[c] && board[a] != 'D'
     ) {
-      console.log(board[a]);
       setWinner(board[a]);
       setActiveGame(10);
         return board[a];

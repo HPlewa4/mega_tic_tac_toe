@@ -26,7 +26,14 @@ const Game = ({turn, setTurn, game_num, megaBoard, setMegaBoard, activeGame, set
         return newMegaBoard;
     });
 
+    }else if (newBoard.every(tile => tile !== null)) {
+      setMegaBoard(prevMegaBoard => {
+        const newMegaBoard = [...prevMegaBoard];
+        newMegaBoard[game_num] = 'D';
+        return newMegaBoard;
+      });
     }
+
     setTurn(turn === 'X' ? 'O' : 'X');
 
   };
