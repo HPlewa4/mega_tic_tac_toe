@@ -1,13 +1,13 @@
 .mega_game{
-    width:912px;
-    height:906px;
+    width:732px;
+    height:736px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: black;
     margin-top: 20px;
 }
 
-h1{
+h2{
     color: rgb(69, 25, 190);
     text-align: center;
 }

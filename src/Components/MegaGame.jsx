@@ -62,7 +62,7 @@ const MegaGame = () => {
 
   return (
     <>
-    <h1>Mega Tic Tac Toe</h1>
+    <h2>Mega Tic Tac Toe</h2>
     <div className={`mega_game ${activeGame === null ? 'active-game' : ''}`}>
       {megaBoard.map((_, index) => (
         <Game

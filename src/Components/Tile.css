@@ -1,7 +1,7 @@
 
 .tile {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border: 1px solid black;
   display: flex;
   align-items: center;
@@ -13,9 +13,9 @@
 .empty {background-color: rgb(69, 25, 190);}
 
 .megaTile {
-  width: 300px;
-  height: 300px;
+  width: 240px;
+  height: 240px;
   margin: 2px;
-  font-size:8rem;
+  font-size:7rem;
  }
  
